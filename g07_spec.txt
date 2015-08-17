@@ -1,0 +1,63 @@
+	 Project definition for group 07
+
+
+Your project is to develop the code for an arbitrator.
+Your arbitrator will support 7 masters
+
+The masters will make a request with a signal 'need'
+The masters own the bus when they receive a signal 'ack'
+
+
+Masters can also be a slave. A master may target itself.
+ Master	 Master		Master
+ Number	 Slave		Slave
+       	 Addr 		Addr
+       	 Start		End
+
+   0	fffe7637	fffe7643
+   1	ffffd325	ffffd382
+   2	ffff109e	ffff115f
+   3	ffff428c	ffff438a
+   4	fffef204	fffef295
+   5	fffe740c	fffe74b1
+   6	fffead20	fffead52
+
+The master address bus is 64 bits wide, and named 'addrM64'
+The master data out bus is called 'DoutM'
+The master data in bus is called 'MinData'
+Each master shall be arbitrated so it receives at least
+the following arbitration percentages:
+Master Percent 
+
+  4   	25
+  3   	19
+  6   	16
+  0  	15
+  1   	13
+  5   	 6
+  2   	 6
+The percentages shall be computed over intervals of 500 cycles
+All percentage usages start over on each interval
+
+The slave data bus into the slave is 64 bits wide, and named 'SbusIn'
+The slave data bus out from the slave is named 'dbus_out'
+
+ The slave address bus is 64 bits wide, and named 'addr'
+Each slave has an enable called 'en' indicating a valid cycle has begun
+Each slave indicates the end of transfer with a signal called 'Tdone'
+Each cycle after en up to and including Tdone is assumed to transfer data
+
+slave	Addr L		Addr H
+
+ 0	ffff37c8	ffff38a2
+ 1	ffffd9bc	ffffda14
+ 2	ffffad86	ffffadc9
+ 3	ffffa294	ffffa345
+ 4	fffff7e5	fffff89a
+ 5	ffff5e9e	ffff5f50
+ 6	ffffb7b4	ffffb8a8
+ 7	ffff4a19	ffff4b0d
+
+The clock is named 'sysClk' and is active on the negedge
+The system reset is named 'Breset'
+

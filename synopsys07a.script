@@ -1,0 +1,21 @@
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+read_sverilog { gif07.sv g07Arbitrator.sv }
+create_clock c1.sysClk -name sysClk -period 8.0
+set_propagated_clock sysClk
+set_clock_uncertainty 0.25 sysClk
+set_propagated_clock sysClk
+set_output_delay 0.5 -clock sysClk [all_outputs]
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port sysClk]] [get_port c1.Breset]]
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+set_input_delay 0.6 -clock sysClk $all_inputs_wo_rst_clk
+set_output_delay 0.6 -clock sysClk [all_outputs]
+set_fix_hold [ get_clocks sysClk ]
+set_output_delay 0.3 -clock sysClk [all_outputs]
+set_wire_load_model -name T8G00TW8
+compile_ultra
+create_clock sysClk -name sysClk -period 10.0
+update_timing
+report_timing -max_paths 3
+write -hierarchy -format verilog -output g07Arbitrator_gates.v
+quit

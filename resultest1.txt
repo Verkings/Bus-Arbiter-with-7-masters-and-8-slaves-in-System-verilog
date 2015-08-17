@@ -1,0 +1,70 @@
+/apps/synopsys/VCSMX_NEW/bin/vcs
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 20 (Heisenbug)' is not supported on 'x86_64' 
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '3.17.4-200.fc20.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Thu Apr  9 22:58:47 2015
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+The design hasn't changed and need not be recompiled. 
+If you really want to, delete file simv.daidir/.vcs.timestamp and
+run VCS again.
+
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Apr  9 22:58 2015
+
+          7 won in 10 sets
+
+	Mst	Sim		Goal
+          0	14.29	         15
+          1	14.29	         13
+          2	14.29	          6
+          3	14.29	         19
+          4	14.29	         25
+          5	14.29	          6
+          6	14.29	         16
+
+          7 won in 10 sets
+
+	Mst	Sim		Goal
+          0	14.29	         15
+          1	14.29	         13
+          2	14.29	          6
+          3	14.29	         19
+          4	14.29	         25
+          5	14.29	          6
+          6	14.29	         16
+
+
+
+=============== Error ==============
+
+You are off by more than 2 percent
+Error: "tb07a.sv", 328: tbg07: at time 603001000 ps
+
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+$finish called from file "tb07a.sv", line 330.
+$finish at simulation time             60301100
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 603011000 ps
+CPU Time:      0.310 seconds;       Data structure size:   0.0Mb
+Thu Apr  9 22:58:51 2015
